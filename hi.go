@@ -11,7 +11,7 @@ import (
 
 func main() {
 	// Conectar a Oracle
-	oracleDB, err := sql.Open("godror", "system/oracle_password@localhost:1521/XE")
+	oracleDB, err := sql.Open("godror", `user="system" password="Cristian6093" connectString="localhost:1521/XE"`)
 	if err != nil {
 		log.Fatal(err)
 	}

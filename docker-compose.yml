@@ -20,6 +20,17 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
 
+  dbeaver:
+    image: dbeaver/cloudbeaver:latest
+    ports:
+      - "8978:8978"
+    volumes:
+      - dbeaver-data:/opt/cloudbeaver/workspace
+    depends_on:
+      - oracle
+      - postgres
+
 volumes:
   oracle-data:
   postgres-data:
+  dbeaver-data:
